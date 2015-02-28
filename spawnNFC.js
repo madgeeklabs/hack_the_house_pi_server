@@ -1,8 +1,9 @@
 var exec = require('child_process').exec;
-var child = exec('explorenfc-basic -k');
+var child = exec('explorenfc-basic');
 
 child.stdout.on('data', function(data) {
     console.log('stdout: ' + data);
+    child = exec('explorenfc-basic');
 });
 child.stderr.on('data', function(data) {
     console.log('stdout: ' + data);
