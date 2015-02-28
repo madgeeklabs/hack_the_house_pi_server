@@ -4,6 +4,7 @@
 	"version": "0.0.1-2",
 	"private": "true",
 	"dependencies": {
-		"exec-queue": "*"
+		"exec-queue": "*",
+		"request" : "*"
 		}
 }
