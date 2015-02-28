@@ -1,15 +1,12 @@
-var spawn = require('child_process').spawn,
-    ls    = spawn('explorenfc-basic');
+var exec = require('child_process').exec;
+var child = exec('explorenfc-basic -k');
 
-ls.stdout.on('data', function (data) {
-  console.log('stdout: ' + data);
+child.stdout.on('data', function(data) {
+    console.log('stdout: ' + data);
 });
-
-ls.stderr.on('data', function (data) {
-  console.log('stderr: ' + data);
+child.stderr.on('data', function(data) {
+    console.log('stdout: ' + data);
 });
-
-ls.on('close', function (code) {
-  console.log('child process exited with code ' + code);
-  ls = spawn('explorenfc-basic');
+child.on('close', function(code) {
+    console.log('closing code: ' + code);
 });
