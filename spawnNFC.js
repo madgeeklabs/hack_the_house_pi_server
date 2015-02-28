@@ -2,6 +2,7 @@ var exec = require('child_process').exec;
 var child = exec('explorenfc-basic');
 
 child.stdout.on('data', function(data) {
+	console.log(data);
 	var info = JSON.parse(data.substr(data.indexOf('{'), data.indexOf('}')));
 	console.log (info.type);
     console.log('stdout: ' + data);
