@@ -7,7 +7,8 @@ child.stdout.on('data', function(data) {
 
     lines.forEach(function(line) {
     	if (line.indexOf('{') != -1){
-    		console.log(line);
+    		console.log(line.substr(line.indexOf('{')));
+    		var info = JSON.parse(line.substr(line.indexOf('{')));
     	}
     });
 });
