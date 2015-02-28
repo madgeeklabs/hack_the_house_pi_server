@@ -10,6 +10,7 @@ while True:
         print(uid)
     except nxppy.SelectError:
         # SelectError is raised if no card is in the field.
+        print('nothing available');
         pass
 
     time.sleep(1)
