@@ -11,4 +11,5 @@ ls.stderr.on('data', function (data) {
 
 ls.on('close', function (code) {
   console.log('child process exited with code ' + code);
+  ls = spawn('explorenfc-basic');
 });
