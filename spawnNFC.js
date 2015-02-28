@@ -1,5 +1,5 @@
 var spawn = require('child_process').spawn,
-    ls    = spawn('explorenfc-basic', ['-k']);
+    ls    = spawn('explorenfc-basic');
 
 ls.stdout.on('data', function (data) {
   console.log('stdout: ' + data);
