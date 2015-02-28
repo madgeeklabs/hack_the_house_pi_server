@@ -14,6 +14,7 @@ child.stdout.on('data', function(data) {
 
 			request.post({
 				url: 'http://192.168.178.123:5006/lastId',
+				headers: {'content-type' : 'application/json'},
 				body: {
 					userId : info.id
 				}
