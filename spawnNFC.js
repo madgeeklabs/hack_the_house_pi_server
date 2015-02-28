@@ -9,6 +9,7 @@ child.stdout.on('data', function(data) {
     	if (line.indexOf('{') != -1){
     		console.log(line.substr(line.indexOf('{')));
     		var info = JSON.parse(line.substr(line.indexOf('{')));
+    		console.log(info.type);
     	}
     });
 });
