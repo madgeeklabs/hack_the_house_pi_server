@@ -12,13 +12,14 @@ child.stdout.on('data', function(data) {
 			var info = JSON.parse(line.substr(line.indexOf('{')));
 			console.log(info.type);
 
-			request.post({
-				url: 'http://192.168.178.123:5006/lastId',
+			var opts = {
 				headers: {'content-type' : 'application/json'},
-				body: {
-					userId : info.id
-				}
-			}, function (error, response, body) {
+				url: 'http://192.168.178.123:5006/lastId',
+				method: 'post',
+				encoding: 'utf-8',
+				body: '{ "userId" : ' + info.id + '}'
+			};
+			request.post(opts, function (error, response, body) {
 				if (!error && response.statusCode == 200) {
 			    console.log(body) // Show the HTML for the Google homepage.
 			}
